@@ -1,12 +1,7 @@
+// CONSTANTS
+const squares = document.querySelector(".squares");
 
-
-
-sections: {
-    politics: [
-        {id: 1, 
-        question: "¿Cual es el estadio mas grande de argentina?",
-        answer: "Boca Juniors",
-        section: "politics"
-        }
-    ]
+for(let i =0; i<50; i++){
+    let itemList = document.createElement('LI');
+    squares.appendChild(itemList)
 }
