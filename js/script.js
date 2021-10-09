@@ -1,8 +1,18 @@
 // CONSTANTS
-const squares = document.querySelector(".squares");
+const difficulty_thematic = document.getElementsByClassName("difficulty-thematic-main-container")
+const t = document.getElementById("test").style.display;
 
-for(let i =0; i<50; i++){
-    let itemList = document.createElement('LI');
-    squares.appendChild(itemList)
-}
+//Functions
+const getFormDate = () => {
+    let arr = []
+    arr.push(document.getElementById("dificulty").value)
+    arr.push(document.getElementById("thematic").value)
+    return arr;
+} 
+
+console.log(getFormDate())
+
+
+
+
 

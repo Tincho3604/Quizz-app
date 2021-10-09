@@ -31,16 +31,13 @@
   </header>
   
   <div>
-  <!-- Body Transition animation -->
-  <!-- <div class="main-area-background-container"> -->
-  <!-- <ul class="squares"></ul> -->
-      
-  <form class="difficulty-thematic-main-container">
+    
+  <form class="difficulty-thematic-main-container" id="test">
     <h3>Selecciona el nivel de dificultad y tematica</h3>
     <div class="select-container">
 
       <label for="dificulty" class="label-select">Dificultad</label>
-        <select name="dificulty">
+        <select name="dificulty" id ="dificulty">
           <option value="Dificil">Dificil</option>
           <option value="Medio" selected>Medio</option>
           <option value="Facil">Facil</option>
@@ -49,14 +46,13 @@
 
     <div class="select-container">
       <label for="thematic" class="label-select">Tematica</label>
-        <select name="thematic" id ="theme">
+        <select name="thematic" id ="thematic">
           <option value="Politica">Politica</option>
           <option value="Deporte" selected>Deporte</option>
           <option value="Cultura general">Cultura general</option>
         </select>
     </div>
-
-    <input type="submit" class="submit-button-form1"></input>
+    <input type="submit" class="submit-button-form1" onclick="getFormDate()"></input>
   </form>
 
 
@@ -74,7 +70,8 @@
       </div>
       <button class="submit-button-form2" >Responder</button>
     </div>
-<!-- </div> -->
+
+
   </div>
     <footer>
       <div class="footer-container">
