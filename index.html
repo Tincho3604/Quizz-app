@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Chakra+Petch:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Fjalla+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/menu.css">
@@ -28,10 +29,36 @@
       </nav>
     </div>
   </header>
-
+  
+  <div>
   <!-- Body Transition animation -->
-  <div class="main-area-background-container" >
-    <ul class="squares"></ul>
+  <!-- <div class="main-area-background-container"> -->
+  <!-- <ul class="squares"></ul> -->
+      
+  <form class="difficulty-thematic-main-container">
+    <h3>Selecciona el nivel de dificultad y tematica</h3>
+    <div class="select-container">
+
+      <label for="dificulty" class="label-select">Dificultad</label>
+        <select name="dificulty">
+          <option value="Dificil">Dificil</option>
+          <option value="Medio" selected>Medio</option>
+          <option value="Facil">Facil</option>
+        </select>
+    </div>
+
+    <div class="select-container">
+      <label for="thematic" class="label-select">Tematica</label>
+        <select name="thematic" id ="theme">
+          <option value="Politica">Politica</option>
+          <option value="Deporte" selected>Deporte</option>
+          <option value="Cultura general">Cultura general</option>
+        </select>
+    </div>
+
+    <input type="submit" class="submit-button-form1"></input>
+  </form>
+
 
     <div class="main-form-header">
       <div class="main-answer-container">
@@ -45,9 +72,10 @@
         <div class="question-container">C++</div>
         <div class="question-container">cobol</div>
       </div>
+      <button class="submit-button-form2" >Responder</button>
     </div>
+<!-- </div> -->
   </div>
-
     <footer>
       <div class="footer-container">
         <div class="link-container">

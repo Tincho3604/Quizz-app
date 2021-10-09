@@ -12,12 +12,7 @@
     background-image: url('../images/wallpaper-form.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-audio {
-    background-color: darkgreen;
-    width: 150px;
-    height: 30px;
+    margin-bottom: 100px;
 }
 
 .main-question-container {
@@ -67,7 +62,7 @@ audio {
 }
 
 
-.question-container {
+.question-container, select, .submit-button-form1, .submit-button-form2  {
 
     -webkit-transform: perspective(1px) translateZ(0);
     transform: perspective(1px) translateZ(0);
@@ -76,10 +71,95 @@ audio {
     transition-duration: 0.3s;
     -webkit-transition-property: transform;
     transition-property: transform;
-  }
-  .question-container:hover, .question-container:focus, .question-container:active {
+}
+
+.question-container:hover, 
+select:hover,
+.submit-button-form1:hover, 
+.submit-button-form2:hover, 
+.question-container:focus,
+select:focus, 
+.submit-button-form1:focus,
+.submit-button-form2:focus,
+.question-container:active, 
+select:active,
+.submit-button-form1:active,
+.submit-button-form2:active
+{
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
-  }
+}
 
+.difficulty-thematic-main-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    background-color: rgb(0, 255, 242);
+    background-image: url('../images/accesorios-juegos-caseros-vista-superior_23-2148234812.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 27%;
+    height: 35vh;
+    opacity: 0.8;
+    border-radius: 10px;
+    margin-top: 100px;
+    text-align: center;
+}
+
+
+.difficulty-thematic-main-container h3 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 25px;
+}
+
+#theme {
+    height: 10vh;
+}
+
+.label-select {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 20px;
+}
+
+select {
+    border: none;
+    text-decoration: none;
+    height: 10vh;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+.select-container {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 50%;
+    height: 20%;
+}
+
+select:focus { 
+    outline: none; 
+}
+
+
+.submit-button-form1 {
+    border: none;
+    width: 130px;
+    height: 40px;
+    font-family: 'Orbitron', sans-serif;
+    margin-top: 15px;
+}
+
+.submit-button-form2 {
+    border: 2px solid black;
+    width: 190px;
+    height: 50px;
+    font-family: 'Orbitron', sans-serif;
+    margin-top: 25px;
+    background-color: rgb(109, 107, 245);
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+}
 

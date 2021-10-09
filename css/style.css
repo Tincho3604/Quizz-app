@@ -7,9 +7,12 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
+    background-color: rgb(123, 173, 251);
 }
 
-
+h1 {
+    text-align: center;
+}
 /* Background body animation */
 .main-area-background-container {
     background: #4e54c8;  
