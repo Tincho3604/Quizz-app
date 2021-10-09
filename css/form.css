@@ -110,8 +110,11 @@ select:active,
 
 
 .difficulty-thematic-main-container h3 {
-    font-family: 'Fjalla One', sans-serif;
-    font-size: 25px;
+    color: rgb(0, 0, 0);
+    letter-spacing: 5px;
+    font-size: 20px;
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
 }
 
 #theme {
@@ -163,3 +166,6 @@ select:focus {
     font-size: 18px;
 }
 
+#id-main-form-header {
+    display: none;
+}
