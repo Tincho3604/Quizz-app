@@ -27,7 +27,7 @@ const QUESTIONS = [
     quizz:"¿Cuantas reelecciones tuvo la Ex presidenta Cristina Fernández de Kirchner?", 
     difficulty: "H",
     options: [2 , 3 , 5,  1],
-    correct: 1
+    correct: 2
   }, 
 ]
 
@@ -40,13 +40,66 @@ const secondary_form = document.getElementById('id-difficulty-thematic-main-cont
 const main_question_container = document.getElementById('id-main-question-container');
 const form_message = document.getElementById('success-form-message');
 
+
 let questionCount = 1;
 localStorage.setItem('IdCount', questionCount);
 form_message.style.display = 'none'
 
 
 //FUNCTIONS
+
+const searchCorrectAnswers = (arrNodes, selectValue) => {
+  let index;
+  let divValue;
+
+  for (let i = 0; i < arrNodes.length; i++) {
+       if(arrNodes[i].innerHTML === selectValue){
+        index = arrNodes.indexOf(arrNodes[i]);
+        divValue = arrNodes[i]
+       }
+    }
+    arrNodes.filter(item => item !== divValue).map(items => {
+      divValue.className = "correct-answer-class"
+      items.classList.add("bad-answer-class");
+      items.classList.remove("question-container");
+    })
+
+}
+
+
+
+const selectAnswer = (divElement, correctAnswer) => {
+  const nodes = [...divElement.parentElement.children]
+
+  if(divElement.innerHTML === correctAnswer) {
+
+    for(let i=0; i<nodes.length; i++) {
+
+      divElement.className = "correct-answer-class"
+      nodes[i].classList.add("bad-answer-class");
+      nodes[i].classList.remove("question-container");
+    }
+    setTimeout(function() { 
+      answerQuestion();
+    }
+    , 1000);
+
+  } else {
+
+      searchCorrectAnswers(nodes, correctAnswer)
+      setTimeout(function() { 
+        answerQuestion();
+      }
+      , 1000);
+  }
+  
+}
+
+
+
 const restartQuizz = () => location.reload()
+
+
 
 const answerQuestion = () => {
   main_form.innerHTML = ''
@@ -68,20 +121,19 @@ button_send_form1.addEventListener('click', (e) => {
 
 const renderForm = IdCount => {
    if(IdCount < 6) { 
-   QUESTIONS.filter(item => item.id === IdCount).map((question) => {
-    main_form.innerHTML += `  
+   QUESTIONS.filter(item => item.id === IdCount).map((question, index) => {
+    main_form.innerHTML += `
       <div class="main-answer-container">
         <div class="second-answer-container">
           <h3>${question.quizz}</h3>
         </div>
       </div>
       <div class="main-question-container" id="id-main-question-container">
-        <div class="question-container">${question.options[0]}</div>   
-        <div class="question-container">${question.options[1]}</div>   
-        <div class="question-container">${question.options[2]}</div>   
-        <div class="question-container">${question.options[3]}</div>   
+        <div class="question-container" onclick="selectAnswer(this, '${question.correct}')">${question.options[0]}</div>   
+        <div class="question-container" onclick="selectAnswer(this, '${question.correct}')">${question.options[1]}</div>   
+        <div class="question-container" onclick="selectAnswer(this, '${question.correct}')">${question.options[2]}</div>   
+        <div class="question-container" onclick="selectAnswer(this, '${question.correct}')">${question.options[3]}</div>   
       </div>
-      <button class="submit-button-form2" onclick="answerQuestion()">Responder</button>
   `
     })
   } else {
