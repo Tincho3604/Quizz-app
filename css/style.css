@@ -13,3 +13,127 @@ body {
 h1 {
     text-align: center;
 }
+
+
+#success-form-message {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background-image: url('../images/32602.jpg');
+    margin: 0 auto;
+    text-align: center;
+    width: 57%;
+    height: 40vh;
+    border-radius: 10px;
+    margin-top: 100px;
+    text-align: center;
+    margin-bottom: 100px;
+    border: 2px solid black;
+    font-family: 'Goldman', cursive;
+}
+
+#success-form-message h2 {
+  font-size: 40px;
+}
+
+.success-form-message-secondary {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 20vh;
+}
+
+.score-question{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+#wrong-question {color:rgb(255, 0, 0)}
+#correct-question {color: rgb(0, 129, 0)}
+
+.score-question h4 {
+   font-size: 25px;
+}
+
+.score-question span {
+    font-size: 40px;
+}
+
+.score-averages h4 {
+    font-size: 40px;
+}
+
+.score-averages span {
+    font-size: 40px;
+    color: rgb(1, 62, 80);
+}
+
+.score-averages {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;   
+}
+
+
+
+
+
+/* CSS */
+.restart-button {
+  backface-visibility: hidden;
+  background: #332cf2;
+  border: 0;
+  border-radius: .375rem;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Circular,Helvetica,sans-serif;
+  font-size: 1.125rem;
+  padding: 1rem 1.25rem;
+  transform: translateZ(0) scale(1);
+  transition: transform .2s;
+  margin-top: 50px;
+}
+
+.restart-button:disabled {
+  color: #787878;
+  cursor: auto;
+}
+
+.restart-button:not(:disabled):hover {
+  transform: scale(1.05);
+}
+
+.restart-button:not(:disabled):hover:active {
+  transform: scale(1.05) translateY(.125rem);
+}
+
+.restart-button:focus {
+  outline: 0 solid transparent;
+}
+
+.restart-button:focus:before {
+  border-width: .125rem;
+  content: "";
+  left: calc(-1*.375rem);
+  pointer-events: none;
+  position: absolute;
+  top: calc(-1*.375rem);
+  transition: border-radius;
+  user-select: none;
+}
+
+.restart-button:focus:not(:focus-visible) {
+  outline: 0 solid transparent;
+}
+
+.restart-button:not(:disabled):active {
+  transform: translateY(.125rem);
+}

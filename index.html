@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Fjalla+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/menu.css">
@@ -55,24 +56,32 @@
     <button  class="submit-button-form1" id="id-submit-button-form1">Enviar</button>
   </form>
 </div>
+    
+    <div class="main-form-header" id="id-main-form-header"></div>
+      
+      <div id="success-form-message">
+        <h2>Formulario completado con exito</h2>
+        <div class="success-form-message-secondary">
+          <div class="score-question">
+            <h4>Respuestas Acertadas</h4>
+            <span id="correct-question" id="correct-question">2</span>
+          </div>
 
-    <div class="main-form-header" id="id-main-form-header">
-      <div class="main-answer-container">
-        <div class="second-answer-container">
-          <h3>¿Cual es el mejor lenguaje de programacion?</h3>
+          <div class="score-question">
+            <h4 >Respuestas Equivocadas</h4>
+            <span id="wrong-question">5</span>
+          </div>
+        </div>
+         <div class="score-averages">
+          <h4>Promedio</h4>
+          <span>50%</span>
+          <button class="restart-button" role="button" onclick="restartQuizz()">Reintentar</button>
         </div>
       </div>
-      <div class="main-question-container">
-        <div class="question-container">Javascript</div>
-        <div class="question-container">Python</div>
-        <div class="question-container">C++</div>
-        <div class="question-container">cobol</div>
-      </div>
-      <button class="submit-button-form2" >Responder</button>
     </div>
-
-
   </div>
+
+
     <footer>
       <div class="footer-container">
         <div class="link-container">
@@ -85,3 +94,4 @@
     <script src="/js/script.js"></script>
   </body>
 </html>
+
