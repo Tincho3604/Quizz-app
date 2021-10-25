@@ -3,31 +3,36 @@ const QUESTIONS = [
     quizz:"¿Quien es el presidente actual de la Republica Argentina?", 
     difficulty: "E",
     options: [ "Cristina Fernández de Kirchner", "Alberto fernandez", "Carlos Menem", "Hipólito Yrigoyen"],
-    correct: "Alberto fernandez"
+    correct: "Alberto fernandez",
+    example: "Carlos Saul Menem"
   }, 
   { id: 2 , 
     quizz:"¿Cuantos años dura el gobierno de un presidente argentino", 
     difficulty: "E",
     options: [2,4,5,3],
     correct: 4,
+    example: "1"
   }, 
   { id: 3 , 
     quizz:"¿Entre que años goberno peron?", 
     difficulty: "H",
     options: ["1946-1952", "1955-1968", "1932-1984", "1946-1955"],
-    correct: "1946-1952"
+    correct: "1946-1952",
+    example: "1999-2000"
   }, 
   { id: 4 , 
     quizz:"¿Cual es el partido del economista javier milei?", 
     difficulty: "M",
     options: ["Frente de todos", "Avanza libertad", "Juntos por el cambio", "Frente Patriota"],
-    correct: "Avanza libertad"
+    correct: "Avanza libertad",
+    example: "Frente de izquierda"
   }, 
   { id: 5 , 
     quizz:"¿Cuantas reelecciones tuvo la Ex presidenta Cristina Fernández de Kirchner?", 
     difficulty: "H",
     options: [2 , 3 , 5,  1],
-    correct: 2
+    correct: 2,
+    example: "6"
   }, 
 ]
 
@@ -49,7 +54,6 @@ form_message.style.display = 'none'
 //FUNCTIONS
 
 const searchCorrectAnswers = (arrNodes, selectValue) => {
-  let index;
   let divValue;
 
   for (let i = 0; i < arrNodes.length; i++) {
@@ -67,10 +71,15 @@ const searchCorrectAnswers = (arrNodes, selectValue) => {
 }
 
 
+const changeModeInput = () => {
+  document.getElementById('form-answer').style.display = "block"
+  document.getElementById('id-main-question-container').style.display = "none"
+} 
+
 
 const selectAnswer = (divElement, correctAnswer) => {
   const nodes = [...divElement.parentElement.children]
-
+  document.getElementById('change-options-button').style.display = "none"
   if(divElement.innerHTML === correctAnswer) {
 
     for(let i=0; i<nodes.length; i++) {
@@ -120,21 +129,37 @@ button_send_form1.addEventListener('click', (e) => {
 
 
 const renderForm = IdCount => {
-   if(IdCount < 6) { 
-   QUESTIONS.filter(item => item.id === IdCount).map((question, index) => {
+  if(IdCount < 6) { 
+  QUESTIONS.filter(item => item.id === IdCount).map((question, index) => {
     main_form.innerHTML += `
       <div class="main-answer-container">
         <div class="second-answer-container">
           <h3>${question.quizz}</h3>
         </div>
       </div>
+      <form id="form-answer" >
+        <span>Formato respuesta: ${question.example}</span>
+        <input type="text" id="answer-id" name="answer" />
+        <input type="submit" value="Responder" class="change-input-button">
+        <button class="change-input-button" id="input-button">Cambiar a las opcciones</button>
+      </form>
+      
       <div class="main-question-container" id="id-main-question-container">
         <div class="question-container" onclick="selectAnswer(this, '${question.correct}')">${question.options[0]}</div>   
         <div class="question-container" onclick="selectAnswer(this, '${question.correct}')">${question.options[1]}</div>   
         <div class="question-container" onclick="selectAnswer(this, '${question.correct}')">${question.options[2]}</div>   
         <div class="question-container" onclick="selectAnswer(this, '${question.correct}')">${question.options[3]}</div>   
+        
+        <button id="change-options-button" onclick="changeModeInput()">Cambiar modo</button>
       </div>
   `
+    document.getElementById('form-answer').style.display = "none"
+
+    document.getElementById('input-button').addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('form-answer').style.display = "none"
+      document.getElementById('id-main-question-container').style.display = "flex"
+    })
     })
   } else {
     main_form.style.display = 'none';
@@ -142,8 +167,8 @@ const renderForm = IdCount => {
   }
 }
 
- if (showQuestions) {
+if (showQuestions) {
   renderForm(questionCount);
- 
 }
+
 
