@@ -1,41 +1,3 @@
-const QUESTIONS = [
-  { id: 1 , 
-    quizz:"¿Quien es el presidente actual de la Republica Argentina?", 
-    difficulty: "E",
-    options: [ "Cristina Fernández de Kirchner", "Alberto fernandez", "Carlos Menem", "Hipólito Yrigoyen"],
-    correct: "Alberto fernandez",
-    example: "CARLOS SAUL MENEM"
-  }, 
-  { id: 2 , 
-    quizz:"¿Cuantos años dura el gobierno de un presidente argentino", 
-    difficulty: "E",
-    options: [2,4,5,3],
-    correct: 4,
-    example: "1"
-  }, 
-  { id: 3 , 
-    quizz:"¿Entre que años goberno peron?", 
-    difficulty: "H",
-    options: ["1946-1952", "1955-1968", "1932-1984", "1946-1955"],
-    correct: "1946-1952",
-    example: "1999-2000"
-  }, 
-  { id: 4 , 
-    quizz:"¿Cual es el partido del economista javier milei?", 
-    difficulty: "M",
-    options: ["Frente de todos", "Avanza libertad", "Juntos por el cambio", "Frente Patriota"],
-    correct: "Avanza libertad",
-    example: "FRENTE DE IZQUIERDA"
-  }, 
-  { id: 5 , 
-    quizz:"¿Cuantas reelecciones tuvo la Ex presidenta Cristina Fernández de Kirchner?", 
-    difficulty: "H",
-    options: [2 , 3 , 5,  1],
-    correct: 2,
-    example: "6"
-  }, 
-]
-
 
 // CONSTANTS
 const difficulty_thematic = document.getElementsByClassName("difficulty-thematic-main-container");
@@ -60,7 +22,7 @@ const searchCorrectAnswers = (arrNodes, selectValue) => {
        if(arrNodes[i].innerHTML === selectValue){
         index = arrNodes.indexOf(arrNodes[i]);
         divValue = arrNodes[i]
-       }
+      }
     }
     arrNodes.filter(item => item !== divValue).map(items => {
       divValue.className = "correct-answer-class"
@@ -117,11 +79,7 @@ const selectAnswer = (divElement, correctAnswer, IdCount) => {
   
 }
 
-
 const restartQuizz = () => location.reload()
-
-
-
 
 
 const answerQuestion = () => {
@@ -129,8 +87,6 @@ const answerQuestion = () => {
   localStorage.setItem('IdCount', parseInt(localStorage.getItem('IdCount'), 10) + 1)
   return renderForm(parseInt(localStorage.getItem('IdCount'), 10));  
 }
-
-
 
 
 //VARIABLES
@@ -146,10 +102,16 @@ button_send_form1.addEventListener('click', (e) => {
 
 
 
-const renderForm = IdCount => {
+const renderForm = (IdCount) => {
+  
+  fetch('questions.json')
+  .then(res => res.json())
+  .then(data => QUESTIONS = data)
+  .then(() => {
 
   if(IdCount < 6) { 
-  QUESTIONS.filter(item => item.id === IdCount).map((question, index) => {
+ 
+    QUESTIONS.filter(item => item.id === IdCount).map((question, index) => {
     localStorage.setItem('answer', question.correct);
     main_form.innerHTML += `
       <div class="main-answer-container">
@@ -184,7 +146,9 @@ const renderForm = IdCount => {
 
 
 
-  // Chequea la respuesta correcta del input y suma 5 puntos y 0 si es incorrecta
+
+
+// Chequea la respuesta correcta del input y suma 5 puntos y 0 si es incorrecta
 document.getElementById('form-answer').onsubmit = function (e) {
   e.preventDefault();
   if (document.getElementById('form-answer').answer.value === localStorage.getItem('answer').toUpperCase()) {
@@ -211,6 +175,7 @@ document.getElementById('form-answer').onsubmit = function (e) {
     main_form.style.display = 'none';
     form_message.style.display = 'block'
   }
+})
 }
 
 

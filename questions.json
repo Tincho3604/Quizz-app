@@ -1,0 +1,37 @@
+
+[{ "id": 1 , 
+    "quizz":"¿Quien es el presidente actual de la Republica Argentina?", 
+    "difficulty": "E",
+    "options": [ "Cristina Fernández de Kirchner", "Alberto fernandez", "Carlos Menem", "Hipólito Yrigoyen"],
+    "correct": "Alberto fernandez",
+    "example": "CARLOS SAUL MENEM"
+  }, 
+  { "id": 2 , 
+    "quizz":"¿Cuantos años dura el gobierno de un presidente argentino", 
+    "difficulty": "E",
+    "options": [2,4,5,3],
+    "correct": 4,
+    "example": "1"
+  }, 
+  { "id": 3 , 
+    "quizz":"¿Entre que años goberno peron?", 
+    "difficulty": "H",
+    "options": ["1946-1952", "1955-1968", "1932-1984", "1946-1955"],
+    "correct": "1946-1952",
+    "example": "1999-2000"
+  }, 
+  { "id": 4 , 
+    "quizz":"¿Cual es el partido del economista javier milei?", 
+    "difficulty": "M",
+    "options": ["Frente de todos", "Avanza libertad", "Juntos por el cambio", "Frente Patriota"],
+    "correct": "Avanza libertad",
+    "example": "FRENTE DE IZQUIERDA"
+  }, 
+  { "id": 5 , 
+    "quizz":"¿Cuantas reelecciones tuvo la Ex presidenta Cristina Fernández de Kirchner?", 
+    "difficulty": "H",
+    "options": [2 , 3 , 5,  1],
+    "correct": 2,
+    "example": "6"
+  }
+]
