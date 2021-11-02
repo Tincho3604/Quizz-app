@@ -3,9 +3,7 @@
 Quizz-app is a web application that allows the player to test their knowledge in a difficult challenge that consists of testing their criteria and intelligence to solve the questions in a certain time.
 
 ## Instructions
-The application will consist of a form with 5 questions. With 5 possible answers.
-Each answered question is worth 2 points, the maximum is 10 points.
-The questions have a minimum value of 1 point, if the user in an entry wishes to write the answer. Earn 2 points, if you want to ask for options the after will be worth 1 point, if you make a mistake in either of the two formats it will be worth 0.
+The application consists of a questionnaire with 5 questions, from which the user can choose a free subject. Each question has two game modes, the "Multiple Choise" mode and the "Direct Answer" mode. If the user decides to answer using the first mode, he will earn 2 points. If he chooses the second, he will earn 5 points. Failure to hit either of the two modes will earn him 0 points. The maximum is 25 points.
                                                 
 The themes to choose from are:
 
@@ -14,7 +12,5 @@ The themes to choose from are:
 * General culture.
 * Music.
 
-The application has easy mode / hard mode. Where the most complicated questions are selected.
-There will be a time limit to be able to answer that will vary according to the game mode.
 
-The ranking of scores will be recorded on the main scoreboard.
+The ranking of scores will be shown at the end.
