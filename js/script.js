@@ -6,8 +6,21 @@ const main_form = document.getElementById('id-main-form-header');
 const secondary_form = document.getElementById('id-difficulty-thematic-main-container');
 const main_question_container = document.getElementById('id-main-question-container');
 const form_message = document.getElementById('success-form-message');
+const openModal = document.querySelector('.hero__cta');
+const modal = document.querySelector('.modal');
+const closeModal = document.querySelector('.modal__close');
 
 
+// RENDER MODAL
+openModal.addEventListener('click', (e)=>{
+    e.preventDefault();
+    modal.classList.add('modal--show');
+});
+
+closeModal.addEventListener('click', (e)=>{
+    e.preventDefault();
+    modal.classList.remove('modal--show');
+});
 let questionCount = 1;
 localStorage.setItem('IdCount', questionCount);
 form_message.style.display = 'none'

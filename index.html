@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Fjalla+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/menu.css">
@@ -31,45 +32,75 @@
     </div>
   </header>
   
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
+
+
+
   <div>
-<div id="id-difficulty-thematic-main-container">
-  <form class="difficulty-thematic-main-container" >
-    <h3>Selecciona la tematica</h3>
-    <div class="select-container">
-      <label for="thematic" class="label-select">Tematica</label>
-        <select name="thematic" id ="thematic">
-          <option value="Politica">Politica</option>
-          <option value="Deporte" selected>Deporte</option>
-          <option value="Cultura general">Cultura general</option>
-        </select>
+  <section class="main-rule-button container">
+      <div class="rule-button-text-container">
+        <span class="hero__cta"><a href="#" ></a></span>
+      </div>
+  </section>
+
+
+  <section class="modal">
+    <div class="modal-container">
+      <h2 class="modal-title">¡Bienvenido a Quizz App!</h2>
+      <h3 class="modal-title">Reglas del juego</h3>
+      <ul>
+        <li>Si elige las opcciones, ganara 2 puntos.</li>
+        <li>Si decide contestar sin opcciones, ganara 5 puntos.</li>
+        <li>Si contesta mal con cualquiera de los dos metodos, ganara 0 puntos.</li>
+      </ul>
+      <h4>El puntaje maximo es 25 puntos. ¡A divertirse!</h4>
+      <a href="#" class="modal__close">¡Entendido!</a>
     </div>
-    <button  class="submit-button-form1" id="id-submit-button-form1">Enviar</button>
-  </form>
-</div>
+  </section>
 
-    <div class="main-form-header" id="id-main-form-header"></div>
-      
-      <div id="success-form-message">
-        <h2>Formulario completado con exito</h2>
-        <div class="success-form-message-secondary">
-          <div class="score-question">
-            <h4>Respuestas Acertadas</h4>
-            <span id="correct-question" id="correct-question">2</span>
-          </div>
 
-          <div class="score-question">
-            <h4 >Respuestas Equivocadas</h4>
-            <span id="wrong-question">5</span>
+
+  <div id="id-difficulty-thematic-main-container">
+    <form class="difficulty-thematic-main-container" >
+      <h3>Selecciona la tematica</h3>
+      <div class="select-container">
+        <label for="thematic" class="label-select">Tematica</label>
+          <select name="thematic" id ="thematic">
+            <option value="Politica">Politica</option>
+            <option value="Deporte" selected>Deporte</option>
+            <option value="Cultura general">Cultura general</option>
+            <option value="Tecnologia">Tecnologia</option>
+            <option value="Musica">Musica</option>
+          </select>
+      </div>
+      <button  class="submit-button-form1" id="id-submit-button-form1">Enviar</button>
+      </form>
+    </div>
+
+    <div class="main-form-header" id="id-main-form-header"></div>    
+        <div id="success-form-message">
+          <h2>Formulario completado con exito</h2>
+          <div class="success-form-message-secondary">
+            <div class="score-question">
+              <h4>Respuestas Acertadas</h4>
+              <span id="correct-question" id="correct-question">2</span>
+            </div>
+
+            <div class="score-question">
+              <h4 >Respuestas Equivocadas</h4>
+              <span id="wrong-question">5</span>
+            </div>
           </div>
-        </div>
-         <div class="score-averages">
-          <h4>Promedio</h4>
-          <span>50%</span>
-          <button class="restart-button" role="button" onclick="restartQuizz()">Reintentar</button>
+          <div class="score-averages">
+            <h4>Promedio</h4>
+            <span>50%</span>
+            <button class="restart-button" role="button" onclick="restartQuizz()">Reintentar</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
 
     <footer>
