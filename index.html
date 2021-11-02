@@ -63,19 +63,19 @@
 
 
   <div id="id-difficulty-thematic-main-container">
-    <form class="difficulty-thematic-main-container" >
+    <form class="difficulty-thematic-main-container" id="choose-thematic">
       <h3>Selecciona la tematica</h3>
       <div class="select-container">
         <label for="thematic" class="label-select">Tematica</label>
-          <select name="thematic" id ="thematic">
-            <option value="Politica">Politica</option>
+          <select name="thematic" id ="thematic" >
+            <option value="Historia">Historia</option>
             <option value="Deporte" selected>Deporte</option>
-            <option value="Cultura general">Cultura general</option>
-            <option value="Tecnologia">Tecnologia</option>
+            <option value="Cultura">Cultura</option>
+            <option value="Programacion">Programacion</option>
             <option value="Musica">Musica</option>
           </select>
       </div>
-      <button  class="submit-button-form1" id="id-submit-button-form1">Enviar</button>
+        <button class="submit-button-form1" id="id-submit-button-form1">Elegir</button>
       </form>
     </div>
 
@@ -85,17 +85,17 @@
           <div class="success-form-message-secondary">
             <div class="score-question">
               <h4>Respuestas Acertadas</h4>
-              <span id="correct-question" id="correct-question">2</span>
+              <span id="correct-question"></span>
             </div>
 
             <div class="score-question">
               <h4 >Respuestas Equivocadas</h4>
-              <span id="wrong-question">5</span>
+              <span id="wrong-question"></span>
             </div>
           </div>
           <div class="score-averages">
-            <h4>Promedio</h4>
-            <span>50%</span>
+            <h4>Puntaje</h4>
+            <span id="score-span"></span>
             <button class="restart-button" role="button" onclick="restartQuizz()">Reintentar</button>
           </div>
         </div>
