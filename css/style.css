@@ -63,12 +63,13 @@ h1 {
 
 #success-form-message {
     display: flex;
+    color: rgb(0, 0, 0);
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
     margin: 0 auto;
     text-align: center;
-    width: 57%;
+    width: 40%;
     height: 40vh;
     border-radius: 10px;
     margin-top: 100px;
@@ -76,6 +77,10 @@ h1 {
     margin-bottom: 100px;
     border: 2px solid black;
     font-family: 'Goldman', cursive;
+    background-image: url('../images/wallpaper-form.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8;
 }
 
 #success-form-message h2 {
@@ -114,7 +119,7 @@ h1 {
 
 .score-averages span {
     font-size: 40px;
-    color: rgb(1, 62, 80);
+    color: rgb(0, 0, 0);
 }
 
 .score-averages {
