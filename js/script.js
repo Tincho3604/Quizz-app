@@ -233,9 +233,8 @@ document.getElementById('form-answer').onsubmit = function (e) {
     answerQuestion();
   }
   document.getElementById('form-answer').reset();
-}//-----------------------------------------------------------------------------------------------------------------------------
+}
   } else {
-
       correctQuestion.innerHTML += localStorage.getItem('correctAnswer');
       wrongQuestion.innerHTML += localStorage.getItem('wrongAnswers');
       scoreContainer.innerHTML += localStorage.getItem('score');
@@ -245,6 +244,7 @@ document.getElementById('form-answer').onsubmit = function (e) {
     }
   })
 }
+
 
 
 

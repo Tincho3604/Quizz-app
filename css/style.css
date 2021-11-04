@@ -333,3 +333,23 @@ h1 {
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
 }
+
+
+
+@media (max-width: 700px) and (min-width: 200px){
+  .success-form-message-secondary  {
+
+  }
+  #success-form-message {
+    width: 90%;
+    height: 80vh;
+    background-color: darkorange;
+  }
+  .score-question h4{
+    font-size: 20px;
+    
+  }
+  .success-form-message-secondary{
+    text-align: center;
+  }
+}
