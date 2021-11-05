@@ -14,6 +14,24 @@ The themes to choose from are:
 
 The ranking of scores will be shown at the end.
 
+
+### Installation adn Starting 🚀🔧
+```
+git clone
+Open index.html
+```
+
+The tools I used to create this project:
+- [Swal] (https://sweetalert.js.org/guides/) - Custom Modal used.
+
+Authors ✒️
+Project carried out by myself.
+
+Martin Cumpe - Author
+License 📄
+All rights reserved.
+
+
 ## SCREENSHOTS
 ![image](https://user-images.githubusercontent.com/62455807/140460865-06bf482c-d18a-441f-a09e-2c27b5bff898.png)
 ![image](https://user-images.githubusercontent.com/62455807/140460896-3b0daa58-111e-4fb5-a7f8-6bf036490ea8.png)
