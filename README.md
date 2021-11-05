@@ -15,7 +15,7 @@ The themes to choose from are:
 The ranking of scores will be shown at the end.
 
 
-### Installation adn Starting 🚀🔧
+### Installation and Starting 🚀🔧
 ```
 git clone
 Open index.html
