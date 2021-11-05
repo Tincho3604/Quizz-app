@@ -12,5 +12,13 @@ The themes to choose from are:
 * General culture.
 * Music.
 
-
 The ranking of scores will be shown at the end.
+
+## SCREENSHOTS
+![image](https://user-images.githubusercontent.com/62455807/140460865-06bf482c-d18a-441f-a09e-2c27b5bff898.png)
+![image](https://user-images.githubusercontent.com/62455807/140460896-3b0daa58-111e-4fb5-a7f8-6bf036490ea8.png)
+![image](https://user-images.githubusercontent.com/62455807/140460909-f39f54f0-78bf-4851-81c5-a6b9fd0832dc.png)
+![image](https://user-images.githubusercontent.com/62455807/140460920-c8dd7fe1-b499-43fb-a1f6-26da485ddef9.png)
+![image](https://user-images.githubusercontent.com/62455807/140460945-88c018fc-33dc-41f6-8e3d-5e4a2f13e369.png)
+![image](https://user-images.githubusercontent.com/62455807/140460967-76c11112-d61d-4d70-ab4f-ca2bc486fc05.png)
+
