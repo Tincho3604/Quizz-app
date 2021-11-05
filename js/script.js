@@ -131,7 +131,7 @@ const answerQuestion = () => {
 
 // Selecciona del JSON 5 preguntas y les asigna el ID del 1 al 5
 const selectRandomQuestions = (ar) => {
-  let num = Math.floor(Math.random() * (45 - 1 + 1) + 1)
+  let num = Math.floor(Math.random() * (10 - 1 + 1) + 1)
   let cont = 1
   for(let i=0; i<5; i++){
     ar.slice(num,num+5)[i].id = cont++;
@@ -207,7 +207,7 @@ document.getElementById('form-answer').onsubmit = function (e) {
 
 
   e.preventDefault();
-  if (document.getElementById('form-answer').answer.value === localStorage.getItem('answer').toUpperCase()) {
+  if (document.getElementById('form-answer').answer.value.toUpperCase() === localStorage.getItem('answer').toUpperCase()) {
     
     localStorage.setItem('score', parseInt(score,10) + 5);
     localStorage.setItem('correctAnswer', parseInt(scoreWins,10) + 1);
@@ -232,7 +232,6 @@ document.getElementById('form-answer').onsubmit = function (e) {
     })
     answerQuestion();
   }
-  document.getElementById('form-answer').reset();
 }
   } else {
       correctQuestion.innerHTML += localStorage.getItem('correctAnswer');

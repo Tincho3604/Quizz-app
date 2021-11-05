@@ -77,30 +77,30 @@
     "example": "2004"
   },
   { "id": 12 , 
-    "quizz":"¿ID 12", 
+    "quizz":"¿Entre que años Juan Manuel de Rosas fue gobernador?", 
     "difficulty": "H",
-    "options": [2 , 3 , 5,  1],
-    "correct": 2,
-    "example": "6"
+    "options": ["1810-1815","1835-1852","1946-1955","1955-1968"],
+    "correct": "1835-1852",
+    "example": "1756-1720"
   },
   { "id": 13 , 
-    "quizz":"¿ID 13", 
+    "quizz":"¿Que significan las siglas UCR?", 
     "difficulty": "H",
-    "options": [2 , 3 , 5,  1],
-    "correct": 2,
-    "example": "6"
+    "options": ["Union comercial radical", "Union civica radical", "Union de los trabajadores", "Union civica comercial"],
+    "correct": "Union civica radical",
+    "example": "Union Civica Comercial"
   },
   { "id": 14 , 
-    "quizz":"¿ID 14", 
+    "quizz":"¿En que año se firmo el tratado de asuncion que adopto el nombre MERCOSUR?", 
     "difficulty": "H",
-    "options": [2 , 3 , 5,  1],
-    "correct": 2,
+    "options": ["1991","1990","1992","1993"],
+    "correct": "1991",
     "example": "6"
   },
   { "id": 15 , 
-    "quizz":"¿ID 15", 
+    "quizz":"¿En que año asumio el Presidente Mauricio Macri?", 
     "difficulty": "H",
-    "options": [2 , 3 , 5,  1],
-    "correct": 2,
-    "example": "6"
+    "options": [2015 , 2020 , 2011,  2003],
+    "correct": 2015,
+    "example": "2012"
   }]

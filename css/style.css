@@ -342,8 +342,8 @@ h1 {
   }
   #success-form-message {
     width: 90%;
-    height: 80vh;
-    background-color: darkorange;
+    height: 60vh;
+    margin-bottom: 100px;
   }
   .score-question h4{
     font-size: 20px;

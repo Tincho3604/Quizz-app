@@ -42,6 +42,7 @@
   <section class="main-rule-button container">
       <div class="rule-button-text-container">
         <span class="hero__cta"><a href="#" ></a></span>
+        <button class="restart-button" role="button" onclick="restartQuizz()">Reintentar</button>
       </div>
   </section>
 
@@ -68,7 +69,7 @@
       <div class="select-container">
         <label for="thematic" class="label-select">Tematica</label>
           <select name="thematic" id ="thematic" >
-            <option value="Historia">Historia</option>
+            <option value="Politica">Politica</option>
             <option value="Deporte" selected>Deporte</option>
             <option value="Cultura">Cultura</option>
             <option value="Programacion">Programacion</option>
@@ -78,7 +79,8 @@
         <button class="submit-button-form1" id="id-submit-button-form1">Elegir</button>
       </form>
     </div>
-
+    <br/>
+    <br/>
     <div class="main-form-header" id="id-main-form-header"></div>    
         <div id="success-form-message">
           <h2>Cuestionario completado</h2>
@@ -96,7 +98,6 @@
           <div class="score-averages">
             <h4>Puntaje</h4>
             <span id="score-span"></span>
-            <button class="restart-button" role="button" onclick="restartQuizz()">Reintentar</button>
           </div>
         </div>
       </div>
