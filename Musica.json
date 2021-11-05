@@ -56,11 +56,11 @@
     "example": "Charly garcia"
   },
   { "id": 9 , 
-    "quizz":"Entre que años Sarmiento fue senador", 
+    "quizz":"¿De que pais es la banda SKA-P?", 
     "difficulty": "H",
-    "options": ["1880-1877", "1835 y 1810" , "1814-1810" ,"1862-1864"],
-    "correct": "1862-1864",
-    "example": "1810-1811"
+    "options": ["España", "Argentina" , "Uruguay" ,"Peru"],
+    "correct": "España",
+    "example": "Dinamarca"
   },
   { "id": 10 , 
     "quizz":"¿En que año salio el Disco NERVERMIND de nirvana?", 
