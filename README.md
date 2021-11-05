@@ -21,7 +21,7 @@ git clone
 Open index.html
 ```
 
-The tools I used to create this project:
+## The tools I used to create this project:
 - [Swal] (https://sweetalert.js.org/guides/) - Custom Modal used.
 
 Authors ✒️
