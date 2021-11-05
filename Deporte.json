@@ -1,31 +1,31 @@
 
 [{ "id": 1 , 
-  "quizz":"¿Quien fue el primer presidente de la republica argentina?", 
+  "quizz":"¿Cuantos mundiales tiene argentina?", 
   "difficulty": "H",
-  "options": ["Rivadavia" , "Avellaneda" , "Uriburu",  "Roca"],
-  "correct": "Rivadavia",
-  "example": "Yrigoyen"
+  "options": [2,4,1,3],
+  "correct": 2,
+  "example": "1"
 },
 { "id": 2 , 
-  "quizz":"¿Quien fue el primer presidente de la republica argentina?", 
+  "quizz":"¿Quien es el pais con mas mundiales ganados?", 
   "difficulty": "H",
-  "options": ["Rivadavia" , "Avellaneda" , "Uriburu",  "Roca"],
-  "correct": "Rivadavia",
-  "example": "Yrigoyen"
+  "options": ["Argentina", "Brasil", "Alemania", "Italia"],
+  "correct": "Brasil",
+  "example": "Uruguay"
 },
 { "id": 3 , 
-  "quizz":"¿Quien fue el primer presidente de la republica argentina?", 
+  "quizz":"¿Quien fue el campeon del mundial 2014?", 
   "difficulty": "H",
-  "options": ["Rivadavia" , "Avellaneda" , "Uriburu",  "Roca"],
-  "correct": "Rivadavia",
-  "example": "Yrigoyen"
+  "options": ["Argentina" , "Alemania" , "Uruguay",  "Brasil"],
+  "correct": "Alemania",
+  "example": "Chile"
 },
 { "id": 4 , 
-  "quizz":"¿Quien fue el primer presidente de la republica argentina?", 
+  "quizz":"¿En el futbol que sucede cuando se comete falta en tu misma area?", 
   "difficulty": "H",
-  "options": ["Rivadavia" , "Avellaneda" , "Uriburu",  "Roca"],
-  "correct": "Rivadavia",
-  "example": "Yrigoyen"
+  "options": ["Penal" , "Lateral" , "Tiro Libre",  "Saque de arco"],
+  "correct": "Penal",
+  "example": "Saque del medio"
 },
 { "id": 5 , 
   "quizz":"¿Quien fue el primer presidente de la republica argentina?", 
@@ -35,72 +35,72 @@
   "example": "Yrigoyen"
 },
 { "id": 6 , 
-  "quizz":"¿Quien fue el primer presidente de la republica argentina?", 
+  "quizz":"¿De que pais es el MANCHESTER CITY?", 
   "difficulty": "H",
-  "options": ["Rivadavia" , "Avellaneda" , "Uriburu",  "Roca"],
-  "correct": "Rivadavia",
-  "example": "Yrigoyen"
+  "options": ["Estados unidos" , "España" , "Inglaterra",  "Alemania"],
+  "correct": "Inglaterra",
+  "example": "Escocia"
 },
 { "id": 7 , 
-  "quizz":"¿Quien fue el primer presidente de la republica argentina?", 
+  "quizz":"¿Que numero de camiseta usa un lateral izquierdo?", 
   "difficulty": "H",
-  "options": ["Rivadavia" , "Avellaneda" , "Uriburu",  "Roca"],
-  "correct": "Rivadavia",
-  "example": "Yrigoyen"
+  "options": [3,5,10,1],
+  "correct": 3,
+  "example": "6"
 },
 { "id": 8 , 
-  "quizz":"¿Quien fue el primer presidente de la republica argentina?", 
+  "quizz":"¿De que ciudad es el club Rosario Central?", 
   "difficulty": "H",
-  "options": ["Rivadavia" , "Avellaneda" , "Uriburu",  "Roca"],
-  "correct": "Rivadavia",
-  "example": "Yrigoyen"
+  "options": ["Rosario" , "Buenos aires" , "Tucuman",  "Cordoba"],
+  "correct": "Rosario",
+  "example": "Salta"
 },
 { "id": 9 , 
-  "quizz":"¿Quien fue el primer presidente de la republica argentina?", 
+  "quizz":"¿Como se llama el estadio del club FC Barcelona?", 
   "difficulty": "H",
-  "options": ["Rivadavia" , "Avellaneda" , "Uriburu",  "Roca"],
-  "correct": "Rivadavia",
-  "example": "Yrigoyen"
+  "options": ["Bernabéu" , "Camp nou" , "Sánchez-Pizjuán",  "Wanda Metropolitano"],
+  "correct": "Camp nou",
+  "example": "La bombonera"
 },
 { "id": 10 , 
-  "quizz":"¿Quien fue el primer presidente de la republica argentina?", 
+  "quizz":"¿En que equipo debuto Maradona?", 
   "difficulty": "H",
-  "options": ["Rivadavia" , "Avellaneda" , "Uriburu",  "Roca"],
-  "correct": "Rivadavia",
-  "example": "Yrigoyen"
+  "options": ["Argentinos JR" , "Barcelona" , "Boca",  "All boys"],
+  "correct": "Argentinos JR",
+  "example": "Cambaceres"
 },
 { "id": 11 , 
-  "quizz":"¿Quien fue el primer presidente de la republica argentina?", 
+  "quizz":"¿Cuantas champion League ganos el PSG?", 
   "difficulty": "H",
-  "options": ["Rivadavia" , "Avellaneda" , "Uriburu",  "Roca"],
-  "correct": "Rivadavia",
-  "example": "Yrigoyen"
+  "options": [1,0,2,3],
+  "correct": 0,
+  "example": "4"
 },
 { "id": 12 , 
-  "quizz":"¿Quien fue el primer presidente de la republica argentina?", 
+  "quizz":"¿Cuantas finales del mundo jugo MARADONA?", 
   "difficulty": "H",
-  "options": ["Rivadavia" , "Avellaneda" , "Uriburu",  "Roca"],
-  "correct": "Rivadavia",
-  "example": "Yrigoyen"
+  "options": [5,1,3,2],
+  "correct": 2,
+  "example": "4"
 },
 { "id": 13 , 
-  "quizz":"¿Quien fue el primer presidente de la republica argentina?", 
+  "quizz":"¿En que año gano el DT Ramon Diaz su unica libertadores?", 
   "difficulty": "H",
-  "options": ["Rivadavia" , "Avellaneda" , "Uriburu",  "Roca"],
-  "correct": "Rivadavia",
-  "example": "Yrigoyen"
+  "options": [1996 , 1991 , 1990,  1995],
+  "correct": 1996,
+  "example": "1980"
 },
 { "id": 14 , 
-  "quizz":"¿Quien fue el primer presidente de la republica argentina?", 
+  "quizz":"¿Quien fue el jugador con mas penales errados de la seleccion argentina?", 
   "difficulty": "H",
-  "options": ["Rivadavia" , "Avellaneda" , "Uriburu",  "Roca"],
-  "correct": "Rivadavia",
-  "example": "Yrigoyen"
+  "options": ["Messi" , "Palermo" , "Higuain",  "Maradona"],
+  "correct": "Messi",
+  "example": "Batistuta"
 },
 { "id": 15 , 
-  "quizz":"¿Quien fue el primer presidente de la republica argentina?", 
+  "quizz":"¿Quien el club que dejo de existir en el 2018 y perdio la final de la libertadores?", 
   "difficulty": "H",
-  "options": ["Rivadavia" , "Avellaneda" , "Uriburu",  "Roca"],
-  "correct": "Rivadavia",
-  "example": "Yrigoyen"
+  "options": ["Boca" , "River" , "Gremio",  "flamengo"],
+  "correct": "Boca",
+  "example": "Racing"
 }]
