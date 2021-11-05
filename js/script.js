@@ -18,7 +18,7 @@ localStorage.setItem('thematic', 'Deporte');
 localStorage.setItem('correctAnswer', '0') 
 localStorage.setItem('wrongAnswers', '0')
 localStorage.setItem('score', '0')
-
+localStorage.setItem('questionList', '[]')
 
 // RENDER MODAL
 openModal.addEventListener('click', (e) => {
@@ -160,7 +160,7 @@ button_send_form1.addEventListener('click', (e) => {
     .then(res => res.json())
     .then(data => localStorage.setItem('questionList', JSON.stringify
     (selectRandomQuestions(data))))
-    renderForm(questionCount);
+    .then(data => renderForm(questionCount))
   }
   
 
@@ -171,7 +171,6 @@ button_send_form1.addEventListener('click', (e) => {
 // Funcion que ejecuta el renderizado de las preguntas.
 const renderForm = (IdCount) => {
 const QUESTIONS = JSON.parse(localStorage.getItem('questionList'));
-console.log(QUESTIONS)
   if(IdCount < 6) { 
     QUESTIONS.filter(item => item.id === IdCount).map(question => {
     localStorage.setItem('answer', question.correct);
