@@ -1,59 +1,59 @@
 
 [{ "id": 1 , 
-    "quizz":"¿Quien es el presidente actual de la Republica Argentina?", 
+    "quizz":"¿Cual fue el periodo de actividad de The Beatles?", 
     "difficulty": "E",
-    "options": [ "Cristina Fernández de Kirchner", "Alberto fernandez", "Carlos Menem", "Hipólito Yrigoyen"],
-    "correct": "Alberto fernandez",
-    "example": "CARLOS SAUL MENEM"
+    "options": [ "1942-1952","1960-1970", "1945-1955", "1977-1985"],
+    "correct": "1960-1970",
+    "example": "1978-1988"
   }, 
   { "id": 2 , 
-    "quizz":"¿Cuantos años dura el gobierno de un presidente argentino", 
+    "quizz":"¿En que año se fundo la banda The Rolling Stones?", 
     "difficulty": "E",
-    "options": [2,4,5,3],
-    "correct": 4,
-    "example": "1"
+    "options": [1960,1952,1962,1945],
+    "correct": 1962,
+    "example": "1945"
   }, 
   { "id": 3 , 
-    "quizz":"¿Entre que años goberno peron?", 
+    "quizz":"¿Como se llamo el cantante de la banda SUMO?", 
     "difficulty": "H",
-    "options": ["1946-1952", "1955-1968", "1932-1984", "1946-1955"],
-    "correct": "1946-1952",
-    "example": "1999-2000"
+    "options": ["Luca prodan", "Indio solari", "Alberto spinetta", "Ricardo mollo"],
+    "correct": "Luca prodan",
+    "example": "Charly garcia"
   }, 
   { "id": 4 , 
-    "quizz":"¿Cual es el partido del economista javier milei?", 
+    "quizz":"¿En que año los Redondos de ricota tocan en el estadio Huracan?", 
     "difficulty": "M",
-    "options": ["Frente de todos", "Avanza libertad", "Juntos por el cambio", "Frente Patriota"],
-    "correct": "Avanza libertad",
-    "example": "FRENTE DE IZQUIERDA"
+    "options": [1992,1993,1990,1991],
+    "correct": 1993,
+    "example": "1995"
   }, 
   { "id": 5 , 
-    "quizz":"¿Cuantas reelecciones tuvo la Ex presidenta Cristina Fernández de Kirchner?", 
+    "quizz":"¿Quien es el vocalista de la banda Divididos?", 
     "difficulty": "H",
-    "options": [2 , 3 , 5,  1],
-    "correct": 2,
-    "example": "6"
+    "options": ["Diego Arnedo","Catriel Ciavarella","Ricardo mollo","Federico Gil Solá"],
+    "correct": "Ricardo mollo",
+    "example": "Alberto garcia"
   },
   { "id": 6 , 
-    "quizz":"El dia de la independencia argentina fue en ...", 
+    "quizz":"¿En que banda toca el conocido baterista argentino EL TANQUE?", 
     "difficulty": "H",
-    "options": [1816 , 1815 , 1935,  1765],
-    "correct": 1816,
-    "example": "1700"
+    "options": ["Las pelotas", "Divididos", "Tan bionica", "La renga"],
+    "correct": "La renga",
+    "example": "Los redondos"
   },
   { "id": 7 , 
-    "quizz":"¿Quien fue el primer presidente de la republica argentina?", 
+    "quizz":"¿Que artista grabo la siguiente obra: Yo no canto por cantar...?", 
     "difficulty": "H",
-    "options": ["Rivadavia" , "Avellaneda" , "Uriburu",  "Roca"],
-    "correct": "RIVADAVIA",
-    "example": "Yrigoyen"
+    "options": ["Mercedes sosa" , "Charly garcia" , "Pappo napolitano",  "Indio solari"],
+    "correct": "Mercedes sosa",
+    "example": "Walter Giardino"
   },
   { "id": 8 , 
-    "quizz":"El virreinato del Río de la Plata se fundo en ...", 
+    "quizz":"¿Quien es el lider de Rata blanca?", 
     "difficulty": "H",
-    "options": [1776, 1810, 1756, 1786],
-    "correct": 1776,
-    "example": "1711"
+    "options": ["Pablo Motyczak", "Fernando Scarcella", "Walter Giardino", "Adrián Barilari"],
+    "correct": "Walter Giardino",
+    "example": "Charly garcia"
   },
   { "id": 9 , 
     "quizz":"Entre que años Sarmiento fue senador", 
@@ -63,44 +63,44 @@
     "example": "1810-1811"
   },
   { "id": 10 , 
-    "quizz":"¿Cada cuantos años se vota en argentina?", 
+    "quizz":"¿En que año salio el Disco NERVERMIND de nirvana?", 
     "difficulty": "H",
-    "options": [1, 5 , 4 , 3],
-    "correct": 4,
-    "example": "7"
+    "options": ["1991","1994","1995","1990"],
+    "correct": "1991",
+    "example": "1999"
   },
   { "id": 11 , 
-    "quizz":"¿En que año asumio George H.W.Bush?", 
+    "quizz":"¿Quien fue el baterista fundador de slipknot?", 
     "difficulty": "H",
-    "options": [2000, 2001, 2005, 2007],
-    "correct": 2000,
-    "example": "2004"
+    "options": ["Corey Taylor","Joey Jordison", "Paul Gray", "Shawn Crahan"],
+    "correct": "Joey Jordison",
+    "example": "Luke holland"
   },
   { "id": 12 , 
-    "quizz":"¿ID 12", 
+    "quizz":"¿En que banda toco el baterista Mike Portnoy?", 
     "difficulty": "H",
-    "options": [2 , 3 , 5,  1],
-    "correct": 2,
-    "example": "6"
+    "options": ["Much the same" , "Bad Religion" , "Dream Theater",  "Silverstein"],
+    "correct": "Dream Theater",
+    "example": "The decline"
   },
   { "id": 13 , 
-    "quizz":"¿ID 13", 
+    "quizz":"¿En que año salio el disco A contra luz de la vela puerca", 
     "difficulty": "H",
-    "options": [2 , 3 , 5,  1],
-    "correct": 2,
-    "example": "6"
+    "options": [2005 , 2001 , 2004,  2002],
+    "correct": 2004,
+    "example": "2006"
   },
   { "id": 14 , 
-    "quizz":"¿ID 14", 
+    "quizz":"¿Quien fue el guitarrista de Guns and roses?", 
     "difficulty": "H",
-    "options": [2 , 3 , 5,  1],
-    "correct": 2,
+    "options": ["Slash" , "Axel Rose" , "Duff McKagan",  "Izzy Stradlin"],
+    "correct": "Slash",
     "example": "6"
   },
   { "id": 15 , 
-    "quizz":"¿ID 15", 
+    "quizz":"¿Como se llama el cantante de Bad Religion", 
     "difficulty": "H",
-    "options": [2 , 3 , 5,  1],
-    "correct": 2,
+    "options": ["Brett Gurewitz", "Greg Graffin" , "Greg Hetson", "Brian Baker"],
+    "correct": "Greg Graffin",
     "example": "6"
   }]
