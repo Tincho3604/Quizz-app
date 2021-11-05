@@ -36,6 +36,9 @@ form_message.style.display = 'none'
 
 
 
+
+
+
 const searchCorrectAnswers = (arrNodes, selectValue) => {
   let divValue;
 
@@ -132,10 +135,11 @@ const answerQuestion = () => {
 // Selecciona del JSON 5 preguntas y les asigna el ID del 1 al 5
 const selectRandomQuestions = (ar) => {
   let num = Math.floor(Math.random() * (10 - 1 + 1) + 1)
-  let cont = 1
+
   for(let i=0; i<5; i++){
-    ar.slice(num,num+5)[i].id = cont++;
+    ar.slice(num,num+5)[i].id = i+1;
   }
+
   return ar.slice(num,num+5)
 }
 
@@ -146,9 +150,19 @@ button_send_form1.addEventListener('click', (e) => {
     localStorage.setItem('thematic', difficulty_thematic.value)
     main_form.style.display = 'flex';
     secondary_form.style.display= 'none';
-    renderForm(questionCount);
+    callAPI();
   })
 
+
+// Esta funcion obtiene informacion de los archivos
+  const callAPI = () => {
+    fetch(`${localStorage.getItem('thematic')}.json`)
+    .then(res => res.json())
+    .then(data => localStorage.setItem('questionList', JSON.stringify
+    (selectRandomQuestions(data))))
+    renderForm(questionCount);
+  }
+  
 
 
 
@@ -156,13 +170,10 @@ button_send_form1.addEventListener('click', (e) => {
 
 // Funcion que ejecuta el renderizado de las preguntas.
 const renderForm = (IdCount) => {
-  fetch(`${localStorage.getItem('thematic')}.json`)
-  .then(res => res.json())
-  .then(data => QUESTIONS = data)
-  .then(() => {
-
+const QUESTIONS = JSON.parse(localStorage.getItem('questionList'));
+console.log(QUESTIONS)
   if(IdCount < 6) { 
-    selectRandomQuestions(QUESTIONS).filter(item => item.id === IdCount).map(question => {
+    QUESTIONS.filter(item => item.id === IdCount).map(question => {
     localStorage.setItem('answer', question.correct);
     main_form.innerHTML += `
       <div class="main-answer-container">
@@ -241,7 +252,6 @@ document.getElementById('form-answer').onsubmit = function (e) {
       main_form.style.display = 'none';
       form_message.style.display = 'block';
     }
-  })
 }
 
 
