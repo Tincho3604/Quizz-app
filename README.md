@@ -24,7 +24,7 @@ Open index.html
 ## The tools I used to create this project:
 - [Swal] (https://sweetalert.js.org/guides/) - Custom Modal used.
 
-Authors ✒️
+## Authors ✒️
 Project carried out by myself.
 
 Martin Cumpe - Author
