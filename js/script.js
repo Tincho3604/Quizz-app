@@ -12,6 +12,7 @@ const closeModal = document.querySelector('.modal__close');
 const correctQuestion = document.getElementById('correct-question');
 const wrongQuestion = document.getElementById('wrong-question');
 const scoreContainer = document.getElementById('score-span');
+const restart_button = document.getElementById('restart-button-id');
 
 //VARIABLES
 localStorage.setItem('thematic', 'Deporte');
@@ -19,6 +20,8 @@ localStorage.setItem('correctAnswer', '0')
 localStorage.setItem('wrongAnswers', '0')
 localStorage.setItem('score', '0')
 localStorage.setItem('questionList', '[]')
+
+restart_button.style.display = 'none';
 
 // RENDER MODAL
 openModal.addEventListener('click', (e) => {
@@ -76,7 +79,7 @@ const selectAnswer = (divElement, correctAnswer, IdCount) => {
   
   document.getElementById('change-options-button').style.display = "none"
 
-  if(divElement.innerHTML === correctAnswer) {
+  const checkAnswer = divElement.innerHTML === correctAnswer;
 
     for(let i=0; i<nodes.length; i++) {
 
@@ -85,35 +88,23 @@ const selectAnswer = (divElement, correctAnswer, IdCount) => {
       nodes[i].classList.remove("question-container");
     }
 
-    localStorage.setItem('correctAnswer', parseInt(scoreWins,10) + 1);
-    localStorage.setItem('score', parseInt(score,10) + 2);
+    if (checkAnswer) localStorage.setItem('correctAnswer', parseInt(scoreWins,10) + 1);
+    else {
+      localStorage.setItem('wrongAnswers', parseInt(scoreLoses,10) + 1);
+      searchCorrectAnswers(nodes, correctAnswer)
+      localStorage.setItem('score', parseInt(score,10) + 2)
+    }
 
     setTimeout(function() { 
       Swal.fire({
-        title: '¡Respuesta correcta!',
-        text: `Has ganado 2 puntos`,
-        icon: 'success',
+        title: `${checkAnswer ? '¡Respuesta correcta!' : '¡Respuesta incorrecta!'}`,
+        text: `${checkAnswer ? 'Has ganado 2 puntos' : 'Has ganado 0 puntos'}`,
+        icon: `${checkAnswer ? 'success' : 'error'}`,
         confirmButtonText: `${ IdCount === '5' ? 'Ver resultados' : 'Siguiente pregunta'}`
       })
       answerQuestion();
     }
     , 1500);
-
-  } else {
-      localStorage.setItem('wrongAnswers', parseInt(scoreLoses,10) + 1);
-      searchCorrectAnswers(nodes, correctAnswer)
-      setTimeout(function() { 
-        Swal.fire({
-          title: '¡Respuesta incorrecta!',
-          text: `Has ganado 0 puntos`,
-          icon: 'error',
-          confirmButtonText: `${ IdCount === '5' ? 'Ver resultados' : 'Siguiente pregunta'}`
-        })
-        answerQuestion();
-      }
-      , 1500);
-  }
-  
 }
 
 
@@ -150,17 +141,18 @@ button_send_form1.addEventListener('click', (e) => {
     localStorage.setItem('thematic', difficulty_thematic.value)
     main_form.style.display = 'flex';
     secondary_form.style.display= 'none';
-    callAPI();
+    restart_button.style.display = 'block';
+    callJsonFile();
   })
 
 
 // Esta funcion obtiene informacion de los archivos
-  const callAPI = () => {
+  const callJsonFile = () => {
     fetch(`${localStorage.getItem('thematic')}.json`)
     .then(res => res.json())
     .then(data => localStorage.setItem('questionList', JSON.stringify
     (selectRandomQuestions(data))))
-    .then(data => renderForm(questionCount))
+    .then(() => renderForm(questionCount))
   }
   
 
@@ -172,8 +164,12 @@ button_send_form1.addEventListener('click', (e) => {
 const renderForm = (IdCount) => {
 const QUESTIONS = JSON.parse(localStorage.getItem('questionList'));
   if(IdCount < 6) { 
-    QUESTIONS.filter(item => item.id === IdCount).map(question => {
-    localStorage.setItem('answer', question.correct);
+    QUESTIONS.filter(item => item.id === IdCount).map((question,index) => {
+    
+      localStorage.setItem('answer', question.correct);
+
+    const renderOptions = question.options.map((key,index) => `<div class="question-container" onclick="selectAnswer(this, '${question.correct}', '${question.id}')">${question.options[index]}</div>`)
+    
     main_form.innerHTML += `
       <div class="main-answer-container">
         <div class="second-answer-container">
@@ -188,11 +184,7 @@ const QUESTIONS = JSON.parse(localStorage.getItem('questionList'));
       </form>
       
       <div class="main-question-container" id="id-main-question-container">
-        <div class="question-container" onclick="selectAnswer(this, '${question.correct}', '${question.id}')">${question.options[0]}</div>   
-        <div class="question-container" onclick="selectAnswer(this, '${question.correct}', '${question.id}')">${question.options[1]}</div>   
-        <div class="question-container" onclick="selectAnswer(this, '${question.correct}', '${question.id}')">${question.options[2]}</div>   
-        <div class="question-container" onclick="selectAnswer(this, '${question.correct}', '${question.id}')">${question.options[3]}</div>   
-        
+        ${renderOptions}
         <button id="change-options-button" onclick="changeModeInput()">Cambiar modo</button>
       </div>
   `
@@ -217,31 +209,22 @@ document.getElementById('form-answer').onsubmit = function (e) {
 
 
   e.preventDefault();
-  if (document.getElementById('form-answer').answer.value.toUpperCase() === localStorage.getItem('answer').toUpperCase()) {
-    
+
+  const checkAnswer = document.getElementById('form-answer').answer.value.toUpperCase() === localStorage.getItem('answer').toUpperCase();
+
     localStorage.setItem('score', parseInt(score,10) + 5);
-    localStorage.setItem('correctAnswer', parseInt(scoreWins,10) + 1);
-    Swal.fire({
-      title: '¡Respuesta correcta!',
-      text: `La respuesta correcta era ${localStorage.getItem('answer')}. Has ganado 5 puntos`,
-      icon: 'success',
-      confirmButtonText: `${ IdCount === 5 ? 'Ver resultados' : 'Siguiente pregunta'}`
-    })
 
-    answerQuestion();
-
-  } else {
-
-    localStorage.setItem('wrongAnswers', parseInt(scoreLoses,10) + 1);
+    if (checkAnswer) localStorage.setItem('correctAnswer', parseInt(scoreWins,10) + 1);
+    else localStorage.setItem('wrongAnswers', parseInt(scoreLoses,10) + 1);
     
     Swal.fire({
-      title: '¡Respuesta incorrecta!',
-      text: `La respuesta correcta era ${localStorage.getItem('answer')}. Has ganado 0 puntos`,
-      icon: 'error',
+      title: `${checkAnswer ? '¡Respuesta correcta!' : '¡Respuesta incorrecta!'}`,
+      text: `${checkAnswer ? `La respuesta correcta era ${localStorage.getItem('answer')}. Has ganado 5 puntos` :
+      `La respuesta correcta era ${localStorage.getItem('answer')}. Has ganado 0 puntos`}`,
+      icon: `${checkAnswer ? 'success' : 'error'}`,
       confirmButtonText: `${ IdCount === 5 ? 'Ver resultados' : 'Siguiente pregunta'}`
     })
     answerQuestion();
-  }
 }
   } else {
       correctQuestion.innerHTML += localStorage.getItem('correctAnswer');
