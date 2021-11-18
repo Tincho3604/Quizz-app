@@ -25,11 +25,11 @@ Open index.html
 - [Swal] (https://sweetalert.js.org/guides/) - Custom Modal used.
 
 ## Authors ✒️
-Project carried out by myself.
+_Project carried out by myself._
 
-Martin Cumpe - Author
-License 📄
-All rights reserved.
+* Martin Cumpe - Author
+* License 📄
+* All rights reserved.
 
 
 ## SCREENSHOTS
