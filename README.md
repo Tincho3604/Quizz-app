@@ -27,8 +27,8 @@ Open index.html
 ## Authors ✒️
 _Project carried out by myself._
 
-* Martin Cumpe - Author
-* License 📄
+* Martin Cumpe - Author.
+* License 📄.
 * All rights reserved.
 
 ## Live Video Demo
