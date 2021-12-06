@@ -168,8 +168,6 @@ const QUESTIONS = JSON.parse(localStorage.getItem('questionList'));
     
       localStorage.setItem('answer', question.correct);
 
-    const renderOptions = question.options.map((key,index) => `<div class="question-container" onclick="selectAnswer(this, '${question.correct}', '${question.id}')">${question.options[index]}</div>`)
-    
     main_form.innerHTML += `
       <div class="main-answer-container">
         <div class="second-answer-container">
@@ -184,7 +182,10 @@ const QUESTIONS = JSON.parse(localStorage.getItem('questionList'));
       </form>
       
       <div class="main-question-container" id="id-main-question-container">
-        ${renderOptions}
+      <div class="question-container" onclick="selectAnswer(this, '${question.correct}', '${question.id}')">${question.options[0]}</div>   
+      <div class="question-container" onclick="selectAnswer(this, '${question.correct}', '${question.id}')">${question.options[1]}</div>   
+      <div class="question-container" onclick="selectAnswer(this, '${question.correct}', '${question.id}')">${question.options[2]}</div>   
+      <div class="question-container" onclick="selectAnswer(this, '${question.correct}', '${question.id}')">${question.options[3]}</div>   
         <button id="change-options-button" onclick="changeModeInput()">Cambiar modo</button>
       </div>
   `
