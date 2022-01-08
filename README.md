@@ -9,7 +9,6 @@ The themes to choose from are:
 
 * Politics.
 * Sports.
-* General culture.
 * Music.
 
 The ranking of scores will be shown at the end.
