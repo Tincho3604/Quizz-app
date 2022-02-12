@@ -69,8 +69,8 @@ h1 {
     flex-direction: column;
     margin: 0 auto;
     text-align: center;
-    width: 100%;
-    height: 100vh;
+    width: 60%;
+    height: 50vh;
     border-radius: 10px;
     margin-top: 100px;
     text-align: center;
@@ -117,7 +117,9 @@ h1 {
  .score-container {
   background-color: rgb(96, 194, 240);
   border-radius: 10px;
-  width: 40vw;
+  width: 20vw;
+  height: 100px;
+  margin-top: 30px;
   opacity: 0.9;
  }
 
@@ -356,7 +358,7 @@ h1 {
 
   #success-form-message {
     width: 90%;
-    height: 70vh;
+    height: 50vh;
   }
   .score-question h4{
     font-size: 20px;
@@ -378,8 +380,8 @@ h1 {
 @media (max-width: 500px) and (min-width: 200px){
 
   #success-form-message {
-    width: 90%;
-    height: 70vh;
+    width: 80%;
+    height: 50vh;
   }
   .score-question h4{
     font-size: 15px;
@@ -394,5 +396,8 @@ h1 {
   }
   .score-averages h4{
     font-size: 20px;
+  }
+  .score-container {
+    width: 30vw;
   }
 }
