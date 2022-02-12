@@ -69,8 +69,8 @@ h1 {
     flex-direction: column;
     margin: 0 auto;
     text-align: center;
-    width: 40%;
-    height: 40vh;
+    width: 100%;
+    height: 100vh;
     border-radius: 10px;
     margin-top: 100px;
     text-align: center;
@@ -84,7 +84,7 @@ h1 {
 }
 
 #success-form-message h2 {
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .success-form-message-secondary {
@@ -99,11 +99,27 @@ h1 {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 50px;
+    height: 60px;
 }
+  .succesfully-container{
+    background-color: rgb(0, 165, 49);
+    border-radius: 10px;
+    width: 90%;
+    opacity: 0.9;
+ }
+ .fail-container {
+  background-color: rgb(231, 118, 137);
+  border-radius: 10px;
+  width: 90%;
+  opacity: 0.9;
+ }
 
-#wrong-question {color:rgb(255, 0, 0)}
-#correct-question {color: rgb(0, 129, 0)}
+ .score-container {
+  background-color: rgb(96, 194, 240);
+  border-radius: 10px;
+  width: 40vw;
+  opacity: 0.9;
+ }
 
 .score-question h4 {
    font-size: 25px;
@@ -336,14 +352,11 @@ h1 {
 
 
 
-@media (max-width: 700px) and (min-width: 200px){
-  .success-form-message-secondary  {
+@media (max-width: 800px) and (min-width: 500px){
 
-  }
   #success-form-message {
     width: 90%;
-    height: 60vh;
-    margin-bottom: 100px;
+    height: 70vh;
   }
   .score-question h4{
     font-size: 20px;
@@ -351,5 +364,35 @@ h1 {
   }
   .success-form-message-secondary{
     text-align: center;
+  }
+
+  #success-form-message span{
+    font-size: 20px;
+  }
+  .score-averages h4{
+    font-size: 20px;
+  }
+}
+
+
+@media (max-width: 500px) and (min-width: 200px){
+
+  #success-form-message {
+    width: 90%;
+    height: 70vh;
+  }
+  .score-question h4{
+    font-size: 15px;
+    
+  }
+  .success-form-message-secondary{
+    text-align: center;
+  }
+
+  #success-form-message span{
+    font-size: 20px;
+  }
+  .score-averages h4{
+    font-size: 20px;
   }
 }

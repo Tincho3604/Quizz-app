@@ -19,6 +19,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     margin-bottom: 300px;
+    background-color: #F26250;
 }
 
 .main-question-container {
@@ -226,7 +227,6 @@ select:focus {
     flex-direction: column;
     text-align: center;
     width: 100%;
-
 }
 
 #form-answer #answer-id {
@@ -244,7 +244,7 @@ select:focus {
     font-family: 'Chakra Petch', sans-serif;
     color: rgb(0, 0, 0);
     font-weight: 900;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     letter-spacing: 3px;
 }
 
@@ -271,7 +271,7 @@ select:focus {
     height: 5vh;
     width: 60%;
     border-radius: 5px;
-    font-size: 12px;
+    font-size: 10px;
     margin-top: 30px;
     background-color: rgb(85, 151, 238);
     font-family: 'Orbitron', sans-serif;

@@ -196,7 +196,8 @@ const QUESTIONS = JSON.parse(localStorage.getItem('questionList'));
         </div>
       </div>
       <form id="form-answer" >
-        <span>Formato respuesta: ${question.example}</span>
+        <span>Formato respuesta:</span>
+        <span>${question.example}</span>
         <input type="text" id="answer-id" name="answer" />
         <input type="submit" value="Responder" class="change-input-button" />
         <button class="change-input-button" id="input-button">Cambiar a las opcciones</button>
