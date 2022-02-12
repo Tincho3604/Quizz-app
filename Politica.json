@@ -42,10 +42,10 @@
     "example": "1700"
   },
   { "id": 7 , 
-    "quizz":"¿Quien fue el primer presidente de la republica argentina?", 
+    "quizz":"¿Quien fue el general a cargo de la Guerra de malvinas?", 
     "difficulty": "H",
-    "options": ["Rivadavia" , "Avellaneda" , "Uriburu",  "Roca"],
-    "correct": "RIVADAVIA",
+    "options": ["Galtieri" , "Avellaneda" , "Uriburu",  "Roca"],
+    "correct": "Galtieri",
     "example": "Yrigoyen"
   },
   { "id": 8 , 

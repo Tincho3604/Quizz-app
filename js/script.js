@@ -41,7 +41,9 @@ form_message.style.display = 'none'
 
 
 
-
+/**
+ * @desc Funcion que busca las respuestas correctas.
+ */
 const searchCorrectAnswers = (arrNodes, selectValue) => {
   let divValue;
 
@@ -60,24 +62,19 @@ const searchCorrectAnswers = (arrNodes, selectValue) => {
 }
 
 
-
-// Cambia de modo "Multiple Choise" a "Respuesta directa"
-const changeModeInput = () => {
-  document.getElementById('form-answer').style.display = "block"
-  document.getElementById('id-main-question-container').style.display = "none"
-} 
-
-
-
-// Evalua si la pregunta fue bien constestada o no, en la opccion de multiple choise
+/**
+ * @desc  Funcion que evalua si la pregunta fue bien constestada o no, en la opccion de multiple choise
+ * @param { HTML }  divElement
+ * @param { String }  correctAnswer
+ * @param { Int }  IdCount
+ *
+ */
 const selectAnswer = (divElement, correctAnswer, IdCount) => {
   let scoreWins = localStorage.getItem('correctAnswer');
   let scoreLoses = localStorage.getItem('wrongAnswers');
   let score = localStorage.getItem('score');
   
   const nodes = [...divElement.parentElement.children]
-  
-  document.getElementById('change-options-button').style.display = "none"
 
   const checkAnswer = divElement.innerHTML === correctAnswer;
 
@@ -88,11 +85,13 @@ const selectAnswer = (divElement, correctAnswer, IdCount) => {
       nodes[i].classList.remove("question-container");
     }
 
-    if (checkAnswer) localStorage.setItem('correctAnswer', parseInt(scoreWins,10) + 1);
+    if (checkAnswer) {
+      localStorage.setItem('correctAnswer', parseInt(scoreWins,10) + 1);
+      localStorage.setItem('score', parseInt(score,10) + 2);
+    }
     else {
       localStorage.setItem('wrongAnswers', parseInt(scoreLoses,10) + 1);
       searchCorrectAnswers(nodes, correctAnswer)
-      localStorage.setItem('score', parseInt(score,10) + 2)
     }
 
     setTimeout(function() { 
@@ -110,12 +109,17 @@ const selectAnswer = (divElement, correctAnswer, IdCount) => {
 
 
 
-
-// Resetea el cuestionario
+/**
+ * @desc  Funcion que resetea el cuestionario.
+ */
 const restartQuizz = () => location.reload()
 
 
-// Esta funcion cambia el Id de la pregunta
+/**
+ * @desc  Funcion que cambia el Id de la pregunta
+ *
+ * @return { Function } 
+ */
 const answerQuestion = () => {
   main_form.innerHTML = ''
   localStorage.setItem('IdCount', parseInt(localStorage.getItem('IdCount'), 10) + 1)
@@ -123,29 +127,40 @@ const answerQuestion = () => {
 }
 
 
-// Selecciona del JSON 5 preguntas y les asigna el ID del 1 al 5
-const selectRandomQuestions = (ar) => {
+/**
+ * @desc  Funcion que recorta 5 preguntas de manera aleatoria para el cuestionario
+ * @param { Array }  questionsList
+ *
+ * @return { Array }  questionsList
+ *                  [
+ *                     { "id": 7 , 
+ *                         "quizz":"¿Quien fue el general a cargo de la Guerra de malvinas?", 
+ *                         "difficulty": "H",
+ *                         "options": ["Galtieri" , "Avellaneda" , "Uriburu",  "Roca"],
+ *                         "correct": "GALTIERI",
+ *                         "example": "Yrigoyen"
+ *                       },
+ *                  ]
+ */
+const selectRandomQuestions = questionsList => {
   let num = Math.floor(Math.random() * (10 - 1 + 1) + 1)
 
   for(let i=0; i<5; i++){
-    ar.slice(num,num+5)[i].id = i+1;
+    questionsList.slice(num,num+5)[i].id = i+1;
   }
 
-  return ar.slice(num,num+5)
+  return questionsList.slice(num,num+5)
 }
-
 
 //EVENTS
 button_send_form1.addEventListener('click', (e) => {
-    e.preventDefault();
-    localStorage.setItem('thematic', difficulty_thematic.value)
-    main_form.style.display = 'flex';
-    secondary_form.style.display= 'none';
-    restart_button.style.display = 'block';
-    callJsonFile();
-  })
-
-
+  e.preventDefault();
+  localStorage.setItem('thematic', difficulty_thematic.value)
+  main_form.style.display = 'flex';
+  secondary_form.style.display= 'none';
+  restart_button.style.display = 'block';
+  callJsonFile();
+})
 // Esta funcion obtiene informacion de los archivos
   const callJsonFile = () => {
     fetch(`${localStorage.getItem('thematic')}.json`)
@@ -159,12 +174,18 @@ button_send_form1.addEventListener('click', (e) => {
 
 
 
-
-// Funcion que ejecuta el renderizado de las preguntas.
-const renderForm = (IdCount) => {
+/**
+ * @desc  Funcion que ejecuta el renderizado de las preguntas.
+ *
+ * @param { Int }  IdCount
+ *
+ */
+const renderForm = IdCount => {
+let changeModeButton = true;
 const QUESTIONS = JSON.parse(localStorage.getItem('questionList'));
-  if(IdCount < 6) { 
-    QUESTIONS.filter(item => item.id === IdCount).map((question,index) => {
+  if(IdCount !== IdCount+1) changeModeButton = true;
+  if(IdCount < 6) {  
+    QUESTIONS.filter(item => item.id === IdCount).map(question => {
     
       localStorage.setItem('answer', question.correct);
 
@@ -182,19 +203,36 @@ const QUESTIONS = JSON.parse(localStorage.getItem('questionList'));
       </form>
       
       <div class="main-question-container" id="id-main-question-container">
-      <div class="question-container" onclick="selectAnswer(this, '${question.correct}', '${question.id}')">${question.options[0]}</div>   
-      <div class="question-container" onclick="selectAnswer(this, '${question.correct}', '${question.id}')">${question.options[1]}</div>   
-      <div class="question-container" onclick="selectAnswer(this, '${question.correct}', '${question.id}')">${question.options[2]}</div>   
-      <div class="question-container" onclick="selectAnswer(this, '${question.correct}', '${question.id}')">${question.options[3]}</div>   
-        <button id="change-options-button" onclick="changeModeInput()">Cambiar modo</button>
+        <div class="question-container" onclick="selectAnswer(this, '${question.correct}', '${question.id}')">${question.options[0]}</div>   
+        <div class="question-container" onclick="selectAnswer(this, '${question.correct}', '${question.id}')">${question.options[1]}</div>   
+        <div class="question-container" onclick="selectAnswer(this, '${question.correct}', '${question.id}')">${question.options[2]}</div>   
+        <div class="question-container" onclick="selectAnswer(this, '${question.correct}', '${question.id}')">${question.options[3]}</div>   
+        
       </div>
   `
-    document.getElementById('form-answer').style.display = "none"
+    document.getElementById('form-answer').style.display = "block"
+    document.getElementById('id-main-question-container').style.display = "none"
 
     document.getElementById('input-button').addEventListener('click', (e) => {
       e.preventDefault();
-      document.getElementById('form-answer').style.display = "none"
-      document.getElementById('id-main-question-container').style.display = "flex"
+
+      if(changeModeButton){
+        Swal.fire({  
+          showCancelButton: true,  
+          confirmButtonText: `Cambiar a opcciones`,  
+          denyButtonText: `Cancelar`,
+          title: `¿Estas seguro que deseas cambiar a las opcciones?`,
+          text: `No podras volver al modo ¡RESPUESTA DIRECTA!`,
+          icon: `warning`,
+        }).then((result) => {  
+          
+            if (result.isConfirmed) {    
+              document.getElementById('form-answer').style.display = "none";
+              document.getElementById('id-main-question-container').style.display = "flex";
+              changeModeButton = false;
+            }
+        });
+      }
     })
   })
 
@@ -213,11 +251,16 @@ document.getElementById('form-answer').onsubmit = function (e) {
 
   const checkAnswer = document.getElementById('form-answer').answer.value.toUpperCase() === localStorage.getItem('answer').toUpperCase();
 
-    localStorage.setItem('score', parseInt(score,10) + 5);
+   
 
-    if (checkAnswer) localStorage.setItem('correctAnswer', parseInt(scoreWins,10) + 1);
-    else localStorage.setItem('wrongAnswers', parseInt(scoreLoses,10) + 1);
-    
+    if (checkAnswer) {
+      localStorage.setItem('correctAnswer', parseInt(scoreWins,10) + 1)
+      localStorage.setItem('score', parseInt(score,10) + 5);
+    } else {
+      localStorage.setItem('wrongAnswers', parseInt(scoreLoses,10) + 1);
+    }
+
+
     Swal.fire({
       title: `${checkAnswer ? '¡Respuesta correcta!' : '¡Respuesta incorrecta!'}`,
       text: `${checkAnswer ? `La respuesta correcta era ${localStorage.getItem('answer')}. Has ganado 5 puntos` :
@@ -236,7 +279,4 @@ document.getElementById('form-answer').onsubmit = function (e) {
       form_message.style.display = 'block';
     }
 }
-
-
-
 
